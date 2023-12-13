@@ -1,0 +1,25 @@
+menu "I2S Configuration"
+
+config I2S_BCK_PIN
+    int "Bit Clock PIN Number"
+    range 0 34
+    default "4"
+    help
+	    Also called "Bit Block Line"
+
+config I2S_WS_PIN
+    int "Word Select PIN Number"
+    range 0 34
+    default "5"
+    help
+	    Also called LRCK - "Left Right Clock" or FS - "Frame Sync"
+
+
+config I2S_DATA_PIN
+    int "Data PIN Number"
+    range 0 34
+    default "18"
+    help
+	    Also called "Serial Data Line"
+
+endmenu

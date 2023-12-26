@@ -1,6 +1,6 @@
 #include "main.h"
 
-static void init_i2s(void)
+static void config_i2s(void)
 {
     static const i2s_config_t i2s_config = {
         .mode = I2S_MODE_TX,
@@ -25,11 +25,11 @@ static void init_i2s(void)
 }
 
 int i2s_asc(const cst_wave *wave, int start, int size, int last, cst_audio_streaming_info *audio_info){
-	if (start == 0){
-		i2s_set_sample_rates(I2S_NUM_0, wave->sample_rate);
-	}
+    if (start == 0){
+	i2s_set_sample_rates(I2S_NUM_0, wave->sample_rate);
+    }
 
-	size_t bytes = 0;
+    size_t bytes = 0;
 
     i2s_write(I2S_NUM_0, &(wave->samples[start]), size*sizeof(uint16_t), &bytes, 100);
 
@@ -40,7 +40,7 @@ int i2s_asc(const cst_wave *wave, int start, int size, int last, cst_audio_strea
 
 
 void task_audio(void *pvParameters){
-	flite_init();
+    flite_init();
     cst_voice *voice = register_cmu_us_kal(NULL);
     cst_audio_streaming_info *audio_info = cst_alloc(struct cst_audio_streaming_info_struct,1);
 
@@ -78,7 +78,7 @@ void set_text_to_synth(const char *text){
 
 void app_main()
 {
-	init_i2s();
+    config_i2s();
 
     text_queue = xQueueCreate(32, sizeof(char *));
 

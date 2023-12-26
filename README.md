@@ -1,10 +1,12 @@
-**Descrição:**
+Este repositório se baseia no [Repositório Original](https://github.com/alkhimey/esp32-flite.git).
+
+# Descrição:
 
 Este código implementa um sistema de Text-to-Speech (TTS) para ESP32, utilizando o FreeRTOS e a biblioteca Flite. 
 O código utiliza o periférico I2S para a saída de áudio e inclui uma tarefa dedicada para a síntese de voz. 
 A voz é sintetizada a partir de texto enviado para uma fila, e o resultado é reproduzido por meio do I2S.
 
-**Recursos Principais:**
+# Recursos Principais:
 
 •	Síntese de voz utilizando a biblioteca Flite.
 
@@ -14,7 +16,7 @@ A voz é sintetizada a partir de texto enviado para uma fila, e o resultado é r
 
 •	Uso do FreeRTOS para gerenciamento de tarefas e fila.
 
-**Observação:**
+# Observação:
 
 Certifique-se de ajustar as configurações do I2S (pino BCK, pino WS, pino de dados, etc.) no arquivo de configuração do projeto (sdkconfig.h ou similar) para refletir corretamente a configuração do seu hardware específico.
 
